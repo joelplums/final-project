@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="25px" viewBox="0 0 26 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 1 + Rectangle 5 + Rectangle 5 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Oval-1-+-Rectangle-5-+-Rectangle-5-Copy-3" sketch:type="MSLayerGroup">
+            <ellipse id="Oval-1" stroke="#000000" fill="#000000" sketch:type="MSShapeGroup" transform="translate(12.932432, 12.543478) rotate(-90.000000) translate(-12.932432, -12.543478) " cx="12.9324324" cy="12.5434783" rx="11.9565217" ry="12.4324324"></ellipse>
+            <g id="Rectangle-5-+-Rectangle-5-Copy-3" transform="translate(4.000000, 6.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-5" transform="translate(4.062196, 9.953860) rotate(-47.000000) translate(-4.062196, -9.953860) " x="3.01215305" y="5.62953573" width="2.10008685" height="8.64864865" rx="3"></rect>
+                <rect id="Rectangle-5-Copy-3" transform="translate(11.378995, 7.009307) rotate(41.000000) translate(-11.378995, -7.009307) " x="10.3289948" y="-0.904766543" width="2.0999999" height="15.8281462" rx="3"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,219 @@
+
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/*@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);*/
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,400);
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.done {
+     width: 25px;
+     position: absolute;
+     top: 5px;
+     right: 5px;
+}
+
+.recipients {
+     display: none;
+     background-color: rgba(0,0,0,0.85);
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     height: 100%;
+     width: 100%;
+     border-radius: 8px;
+}
+
+
+
+
+
+html {
+     height: 100%;
+}
+
+body {
+     
+     font-family: 'Arimo', sans-serif;
+     position: relative;   
+     background-image: url(../images/cardboard.png);   
+     height: 100%;
+     overflow: hidden;
+}
+
+body p {
+     font-size: 10px;
+     position: absolute;
+     bottom: 3px;
+     right: 3px;
+}
+
+
+
+#container {
+    
+     height: 100%;
+     overflow: scroll;
+     
+}
+
+
+[contenteditable="true"]:focus{
+
+outline:none;
+}
+
+
+
+
+.newnote {
+     padding-bottom: 25px;
+     position: relative;
+     width: 80%;
+     margin: 0 auto;
+     margin-top: 40px;
+     border-radius: 8px;
+     background-image: url(../images/bg_white.png);
+     -webkit-box-shadow: 2px 2px 11px 2px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 11px 2px rgba(0,0,0,0.75);
+     box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+     overflow: scroll;
+}
+
+
+
+h1 {
+     padding-top: 30px;
+     padding-left: 25px;
+     padding-bottom: 5px;
+     font-size: 45px;
+     font-weight: 700;
+     border-bottom: double 3px red;
+
+     
+
+}
+
+
+
+.noteline {
+
+     border-bottom: solid 1px #6CAAFF;
+     padding-top: 5px;
+     padding-bottom: 2px;
+     padding-left: 30px;
+     font-size: 20px;
+}
+
+
+
+#plus {
+     display: block;
+     text-align: center;
+     margin: 40px auto;
+
+}
+
+#plus img {
+     width: 55px;
+     
+
+}
+
+.address {
+     width: 95%;
+     height: 80%;
+     font-weight: 700;
+     visibility: hidden;
+     border-radius: 8px;
+     padding-left: 20px;
+     display: inline-block;
+     position: absolute;
+     left: 2.5%;
+     right: 2.5%;
+     top: 20px;
+     background-color: rgba(255,255,255,0.9);
+     overflow: scroll;
+}
+
+.address img {
+     width: 80px;
+     float: left;
+     display: inline-block;
+     height: 100%;
+     padding-left: 20px;
+     
+
+     
+}
+
+.email {
+     display: inline;
+     width: 60%;
+     height: 30px;
+
+     color: #555;
+     overflow: scroll;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     font-size: 20px;
+     margin-left: 30px;
+     padding-left: 20px;
+     padding-right: 10px;
+     padding-bottom: 20px;
+     border-bottom: solid 1px #6CAAFF;
+
+}  
+
+.address button {
+     position: absolute;
+     bottom: 5px;
+     right: 10px;
+     border-radius: 8px;
+     font-weight: 700;
+
+}  
+
+
+.confirmation {
+     text-align: right;
+     padding-top: 10px;
+     padding-right: 10px;
+     font-size: 14px;
+     visibility: hidden;
+     font-weight: 700;
+     
+
+}
+
+
+
+[contenteditable="false"]{
+outline:none;
+border-bottom: dotted 1px #80BEFF;
+margin-top: 20px;
+font-size: 20px;
+
+}
+
+
