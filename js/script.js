@@ -151,7 +151,7 @@ function distribute () {
   			recipientEmail: sendto
   		},
   		method: 'POST',
-  		dataType: 'jsonp',
+  		dataType: 'json',
   		crossDomain: true
   	}).done(function(data) {
 		console.log('success');
