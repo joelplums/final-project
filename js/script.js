@@ -1,3 +1,5 @@
+
+
 function arrowkeys (e) {
 	var code = e.which || e.code;
 	if (code === 38) {
@@ -98,15 +100,17 @@ function newnote () {
 					"<span class=address>" +
 						"<img src=images/recipient.svg>" +
 						"<div class=email contenteditable=true>example@nmail.com, example2@nmail.com, ... etc</div>" +
-						"<button>Send Note</button>" +
+						"<button class=distribute>Send Note</button>" +
 					"</span>" +
 				"</div>" +
 				"<div class=confirmation>Sent.</div>" +
+				"<section class=content>" +
 				"<h1 contenteditable=true></h1>" +
-				"<div class=noteline contenteditable=true></div>" +
-				"<div class=noteline contenteditable=true></div>" +
-				"<div class=noteline contenteditable=true></div>" +
-				"<div class=noteline contenteditable=false></div>" +
+					"<div class=noteline contenteditable=true></div>" +
+					"<div class=noteline contenteditable=true></div>" +
+					"<div class=noteline contenteditable=true></div>" +
+					"<div class=noteline contenteditable=false></div>" +
+				"</section>" +
 				"</div>"
 			));
 	initialiseNoteHandlers();
@@ -114,15 +118,51 @@ function newnote () {
 
 function recipients () {
 	var recipients = $(this).next();
+	console.log($(this));
 	recipients.fadeIn(400);
 	recipients.css("display","inline-block");
 	$(this).fadeOut(600);
 	recipients.children().fadeIn(900).css("visibility","visible");
 	$(".email").click(clearPlaceholder);
-	$("button").click(sendWrapUp);
-
+	$(".distribute").click(distribute);
+	$(".distribute").click(sendWrapUp);
+	
 	
 }
+	
+function distribute () {
+	var sendto = $(this).prev().html();
+	var content = $(this).parent().parent().next().next().html();
+	var sendList = sendto.split(/[ ,]+/)
+	
+	
+	// for loop testing i in sendlist, until error found, return "error"
+	
+
+
+
+	$.ajax({
+		url: "https://x54ft40as2.execute-api.us-east-1.amazonaws.com/prod", 
+		data: {
+			htmlBody: content,
+  			subject: "Note Written '$.now()'",
+  			senderEmail: "notes@joelplums.com",
+  			senderName: "Note",
+  			recipientEmail: sendto
+  		},
+  		method: 'POST',
+  		dataType: 'jsonp',
+  		crossDomain: true
+  	}).done(function(data) {
+		console.log('success');
+		console.log(data);
+	}).fail(function(jqxhr, textStatus, error_text) {
+		console.log('error');
+		console.log(textStatus);
+		console.log(error_text);
+		console.log(jqxhr.getAllResponseHeaders());
+	});
+}	
 
 function clearPlaceholder () {
 	$(this).html($(""));
@@ -142,6 +182,46 @@ function sendWrapUp () {
 	$(confirmation).fadeIn(2000, "swing");
 	$(".done").click(recipients);
 
+}
+
+function infopage () {
+	if ($("#info").attr("data-hide")==="true") {
+		$("#workspace").fadeOut(600);
+		$("#plus").fadeOut(600, function() {
+			$("#infopage").slideDown(2000, "swing");
+			$("#infopage").css("display","block");
+			$("#info").html($("<a>hide</a>"));
+			$("#info").attr("data-hide","false")
+		});
+		
+	} else {
+		$("#info").html($("<a>info</a>"));
+		$("#infopage").slideUp(800, function() {
+			$("#info").attr("data-hide","true")	
+			$("#infopage").css("display","none");
+			$("#workspace").fadeIn(500);
+			$("#plus").fadeIn(500);
+
+		});		
+	} 
+}
+
+function colourchange () {
+	if ($("#colourchange").attr("data-white")==="true") {
+		$(".newnote").css("background-image", "none")
+		$(".newnote").css("background-color", "#FFFFe6")
+		$("#colourchange").css("background-color", "")
+		$("#colourchange").css("background-image", "url(images/bg_white.png)")
+		$("#colourchange").attr("data-white", "false")
+		
+	} else {
+		$(".newnote").css("background-color", "")
+		$(".newnote").css("background-image", "url(images/bg_white.png)");
+		$("#colourchange").css("background-image", "none")
+		$("#colourchange").css("background-color", "#FFFFe6")
+		$("#colourchange").attr("data-white", "true")
+
+	}
 }
 
 
@@ -164,9 +244,13 @@ function initialiseNoteLineHandlers() {
 	$(".noteline").keydown(tabIndent);
 	$(".noteline").keydown(backspace);	
 }
+
+
 $(document).ready(function() {
 	initialiseNoteHandlers();
 	$("#plus").click(newnote);
+	$("#info").click(infopage);
+	$("#colourchange").click(colourchange);
 	
 });
 

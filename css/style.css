@@ -7,9 +7,9 @@
      box-sizing: border-box; /* IE */
 }
 
-/*@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Arimo:700,400);
-
+/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic);*/
 /* Clear fix hack */
 .clearfix:after {
      content: ".";
@@ -24,11 +24,65 @@
 	clear: both;
 }
 
+html {
+     height: 100%;
+     font-size: 20px;
+
+}
+
+#info {
+     background-image: url(../images/cardboard.png);
+     border: solid black 2px;
+     border-radius: 25px;
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     right: 10px;
+     top: 10px;
+     outline: none;
+     
+}
+
+#info:hover {
+     width: 42px;
+     height: 42px;
+}
+
+#info a {
+     color: black;
+     text-decoration: none;
+     font-size: 0.6rem;
+     font-weight: 700;
+
+}
+
+#colourchange {
+     background-color: #FFFFD2;
+     border: solid black 2px;
+     border-radius: 25px;
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     right: 60px;
+     top: 10px;
+     outline: none;
+     
+}
+
+#colourchange:hover {
+     width: 42px;
+     height: 42px;
+}
+
 .done {
      width: 25px;
      position: absolute;
      top: 5px;
      right: 5px;
+}
+
+.done:hover {
+     width: 27px;
 }
 
 .recipients {
@@ -46,9 +100,7 @@
 
 
 
-html {
-     height: 100%;
-}
+
 
 body {
      
@@ -60,7 +112,7 @@ body {
 }
 
 body p {
-     font-size: 10px;
+     font-size: 0.5rem;
      position: absolute;
      bottom: 3px;
      right: 3px;
@@ -72,9 +124,14 @@ body p {
     
      height: 100%;
      overflow: scroll;
+     position: relative;
+     
      
 }
 
+#workspace {
+     margin-top: 68px;
+}
 
 [contenteditable="true"]:focus{
 
@@ -104,7 +161,7 @@ h1 {
      padding-top: 30px;
      padding-left: 25px;
      padding-bottom: 5px;
-     font-size: 45px;
+     font-size: 2.25rem;
      font-weight: 700;
      border-bottom: double 3px red;
 
@@ -120,7 +177,8 @@ h1 {
      padding-top: 5px;
      padding-bottom: 2px;
      padding-left: 30px;
-     font-size: 20px;
+     padding-right: 30px;
+     font-size: 1rem;
 }
 
 
@@ -132,10 +190,15 @@ h1 {
 
 }
 
+
 #plus img {
      width: 55px;
      
 
+}
+
+#plus img:hover{
+     width: 57px;
 }
 
 .address {
@@ -155,7 +218,7 @@ h1 {
 }
 
 .address img {
-     width: 80px;
+     width: 60px;
      float: left;
      display: inline-block;
      height: 100%;
@@ -176,7 +239,7 @@ h1 {
      top: 0;
      bottom: 0;
      margin: auto;
-     font-size: 20px;
+     font-size: 0.8rem;
      margin-left: 30px;
      padding-left: 20px;
      padding-right: 10px;
@@ -185,13 +248,18 @@ h1 {
 
 }  
 
-.address button {
+.distribute {
      position: absolute;
+     outline: none;
      bottom: 5px;
      right: 10px;
      border-radius: 8px;
      font-weight: 700;
 
+}
+
+.distribute:hover {
+     width: 75px;
 }  
 
 
@@ -199,7 +267,7 @@ h1 {
      text-align: right;
      padding-top: 10px;
      padding-right: 10px;
-     font-size: 14px;
+     font-size: 0.7rem;
      visibility: hidden;
      font-weight: 700;
      
@@ -212,8 +280,99 @@ h1 {
 outline:none;
 border-bottom: dotted 1px #80BEFF;
 margin-top: 20px;
-font-size: 20px;
 
 }
+
+.error{
+     width: 100%;
+}
+
+
+.error h1 {
+     border-bottom: none;
+     text-align: center;
+     margin-top: 100px;
+}
+
+
+
+.error a {
+     text-align: center;
+     font-weight: 700;
+     font-size: 15px;
+
+
+
+}
+
+.error button {
+
+     display: block;
+
+     margin: 40px auto 0 auto;
+       
+     
+}
+
+/*infopage additions*/
+#infopage {
+     display: none;
+
+}
+.info {
+     overflow: hidden;
+     position: relative;
+     width: 80%;
+     border-radius: 8px;
+     margin: 50px auto;
+     color: white;
+     min-height: 120px;
+     background-color: rgba(0,0,0,0.6);
+     -webkit-box-shadow: 2px 2px 11px 2px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 11px 2px rgba(0,0,0,0.75);
+     box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+
+}
+
+.info img {
+     display: block;
+     border-radius: 8px;
+     max-width: 65%;
+     margin: 40px auto;
+
+     
+
+}
+
+.info h2 {
+     /*font-family: 'Droid Sans', sans-serif;*/
+     margin: 40px 0 0 40px;
+     font-weight: 700;
+     font-size: 1.75rem;
+     
+}
+
+@media (max-width: 960px) {
+     html {
+          font-size: 18px;
+     }
+}
+
+@media (max-width: 700px) {
+     html {
+          font-size: 16px;
+     }
+}
+
+@media (max-width: 550px) {
+     html {
+          font-size: 14px;
+     }
+}
+
+
+
+ 
+
 
 

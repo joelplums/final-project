@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>Simple Note</title>
+  <title>Note</title>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,6 +13,24 @@
 
 <body>
 	<div id="container">
+		<button id="info" data-hide="true"><a>info</a></button>
+
+		<button id="colourchange" data-white="true"></button>
+
+		<div id="infopage">
+			<div class="info">
+				<h2>write a note.</h2>
+				<img src="images/info1.png">
+			</div>
+			<div class="info">
+				<h2>add recipients.</h2>
+				<img src="images/info2.png">
+			</div>
+			<div class="info">
+				<h2>send note. simple.</h2>	
+			</div>
+  		</div>
+		
 		<div id="workspace">
 			<div class="newnote">
 				<img class="done" src="images/done.svg">
@@ -20,21 +38,21 @@
 					<span class="address">
 						<img src="images/recipient.svg">
 						<div class="email" contenteditable="true">example@nmail.com, example2@nmail.com, ... etc</div>
-						<button>Send Note</button>
+						<button class="distribute">Send Note</button>
 					</span>
 				</div>
 				<div class="confirmation">Sent.</div>
-				<h1 contenteditable="true"></h1>
-				<div class="noteline" data-tab="false" contenteditable="true"></div>
-				<div class="noteline" data-tab="false" contenteditable="true"></div>
-				<div class="noteline" data-tab="false" contenteditable="true"></div>
-				<div class="noteline" data-tab="false" contenteditable="false"></div>
+				<section class="content">
+					<h1 contenteditable="true"></h1>
+					<div class="noteline" data-tab="false" contenteditable="true"></div>
+					<div class="noteline" data-tab="false" contenteditable="true"></div>
+					<div class="noteline" data-tab="false" contenteditable="true"></div>
+					<div class="noteline" data-tab="false" contenteditable="false"></div>
+				</section>
 			</div>
 		</div>
 
 		<span id="plus"><img src="images/plus1.png"></span>
-
-
 	</div>
   
   
@@ -42,6 +60,7 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
 
   <script src="js/script.js"></script>
  <p>powered by joelplums</p>
